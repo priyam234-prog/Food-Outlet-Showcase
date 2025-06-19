@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Court</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🍔 Food Court 🍕</h1>
+        <div class="user-info">
+            <span id="usernameDisplay">Guest</span>
+            <button class="logout-btn">Logout</button>
+            <button class="toggle-btn">Toggle Light Mode</button>
+        </div>
+    </header>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search dishes...">
+        <select id="categoryFilter" class="menu-controls">
+            <option value="all">All Categories</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="non-vegetarian">Non-Vegetarian</option>
+            <option value="pizza">Pizzas</option>
+            <option value="beverage">Beverages</option>
+        </select>
+    </div>
+
+    <section id="menu">
+        <h2>Explore Our Delicious Dishes</h2>
+        
+        <div class="category" data-category="vegetarian">
+            <h3>Vegetarian Delights</h3>
+            <div class="menu-items">
+                <div class="item" data-type="veg" data-category="vegetarian">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.lxChA9j_3yeHZS3BFJThegHaHa?r=0&rs=1&pid=ImgDetMain" alt="Paneer Tikka">
+                    <h3>Paneer Tikka</h3>
+                    <p>Marinated paneer cubes grilled to perfection.</p>
+                    <p class="price">Price: ₹220</p>
+                    <select class="customization" data-base-price="220">
+                        <option value="regular" data-price="220">Regular</option>
+                        <option value="extra_spicy" data-price="240">Extra Spicy (+₹20)</option>
+                        <option value="mild" data-price="210">Mild (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Paneer Tikka" data-price="220">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="vegetarian">
+                    <img src="https://zameenblog.s3.amazonaws.com/blog/wp-content/uploads/2019/04/image-1-22.jpg" alt="Vegetable Biryani">
+                    <h3>Vegetable Biryani</h3>
+                    <p>Aromatic rice with mixed vegetables and spices.</p>
+                    <p class="price">Price: ₹180</p>
+                    <select class="customization" data-base-price="180">
+                        <option value="regular" data-price="180">Regular</option>
+                        <option value="extra_veggies" data-price="200">Extra Veggies (+₹20)</option>
+                        <option value="no_onions" data-price="170">No Onions (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Vegetable Biryani" data-price="180">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="vegetarian">
+                    <img src="https://th.bing.com/th/id/OIP.eCkaFI8iQyzxLt68Rzno8AHaE7?w=254&h=190&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Chana Masala">
+                    <h3>Chana Masala</h3>
+                    <p>Spicy chickpea curry with Indian spices.</p>
+                    <p class="price">Price: ₹160</p>
+                    <select class="customization" data-base-price="160">
+                        <option value="regular" data-price="160">Regular</option>
+                        <option value="extra_spicy" data-price="170">Extra Spicy (+₹10)</option>
+                        <option value="mild" data-price="150">Mild (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Chana Masala" data-price="160">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="vegetarian">
+                    <img src="https://ministryofcurry.com/wp-content/uploads/2017/04/Aloo-Gobi-5-720x720.jpg" alt="Aloo Gobi">
+                    <h3>Aloo Gobi</h3>
+                    <p>Potato and cauliflower in a spiced curry.</p>
+                    <p class="price">Price: ₹140</p>
+                    <select class="customization" data-base-price="140">
+                        <option value="regular" data-price="140">Regular</option>
+                        <option value="extra_masala" data-price="150">Extra Masala (+₹10)</option>
+                        <option value="light" data-price="130">Light (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Aloo Gobi" data-price="140">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="vegetarian">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.bmFLEtV-cOsXU1_W-S-MoAHaEo?r=0&rs=1&pid=ImgDetMain" alt="Palak Paneer">
+                    <h3>Palak Paneer</h3>
+                    <p>Spinach curry with paneer cubes.</p>
+                    <p class="price">Price: ₹200</p>
+                    <select class="customization" data-base-price="200">
+                        <option value="regular" data-price="200">Regular</option>
+                        <option value="extra_paneer" data-price="220">Extra Paneer (+₹20)</option>
+                        <option value="no_spice" data-price="190">No Spice (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Palak Paneer" data-price="200">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="vegetarian">
+                    <img src="https://img.freepik.com/premium-photo/vegetable-navratan-korma-is-famous-indian-mixed-veg-curry-served-with-tandoori-roti-with-butter_57665-24938.jpg" alt="Veg Korma">
+                    <h3>Veg Korma</h3>
+                    <p>Creamy vegetable curry with nuts.</p>
+                    <p class="price">Price: ₹190</p>
+                    <select class="customization" data-base-price="190">
+                        <option value="regular" data-price="190">Regular</option>
+                        <option value="extra_nuts" data-price="210">Extra Nuts (+₹20)</option>
+                        <option value="no_nuts" data-price="180">No Nuts (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Veg Korma" data-price="190">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="vegetarian">
+                    <img src="https://spicecravings.com/wp-content/uploads/2021/05/Dal-Tadka-2-1024x1536.jpg" alt="Dal Tadka">
+                    <h3>Dal Tadka</h3>
+                    <p>Spiced lentil curry with tempering.</p>
+                    <p class="price">Price: ₹150</p>
+                    <select class="customization" data-base-price="150">
+                        <option value="regular" data-price="150">Regular</option>
+                        <option value="extra_spicy" data-price="160">Extra Spicy (+₹10)</option>
+                        <option value="mild" data-price="140">Mild (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Dal Tadka" data-price="150">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="vegetarian">
+                    <img src="https://th.bing.com/th/id/OIP.VxqXvysvMx6VgteT8nrpQAHaE8?w=266&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Veg Manchurian">
+                    <h3>Veg Manchurian</h3>
+                    <p>Indo-Chinese vegetable balls in sauce.</p>
+                    <p class="price">Price: ₹170</p>
+                    <select class="customization" data-base-price="170">
+                        <option value="regular" data-price="170">Regular</option>
+                        <option value="extra_sauce" data-price="180">Extra Sauce (+₹10)</option>
+                        <option value="dry" data-price="160">Dry (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Veg Manchurian" data-price="170">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="vegetarian">
+                    <img src="https://easylowcarb.com/wp-content/uploads/2023/05/Caprese-Salad-Recipe-EasyLowCarb-4-1024x1536.jpg" alt="Caprese Salad">
+                    <h3>Caprese Salad</h3>
+                    <p>Fresh tomatoes, mozzarella, basil, and balsamic glaze.</p>
+                    <p class="price">Price: ₹200</p>
+                    <select class="customization" data-base-price="200">
+                        <option value="regular" data-price="200">Regular</option>
+                        <option value="extra_cheese" data-price="220">Extra Cheese (+₹20)</option>
+                        <option value="no_basil" data-price="190">No Basil (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Caprese Salad" data-price="200">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="vegetarian">
+                    <img src="https://img.freepik.com/premium-photo/risotto-bowl-savory-mushrooms-elegantly-set-table-vertical-mobile-wallpaper_892776-14372.jpg" alt="Mushroom Risotto">
+                    <h3>Mushroom Risotto</h3>
+                    <p>Creamy risotto with wild mushrooms and parmesan.</p>
+                    <p class="price">Price: ₹280</p>
+                    <select class="customization" data-base-price="280">
+                        <option value="regular" data-price="280">Regular</option>
+                        <option value="extra_mushrooms" data-price="300">Extra Mushrooms (+₹20)</option>
+                        <option value="no_parmesan" data-price="260">No Parmesan (-₹20)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Mushroom Risotto" data-price="280">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://tastycookingaroma.com/wp-content/uploads/2024/04/almostawake21_In_a_big_glass_blended_mango_lassi_made_of_ripe_934e0bf7-44ba-4cd0-95a5-954ebdc7b59c_1.jpg" alt="Mango Lassi">
+                    <h3>Mango Lassi</h3>
+                    <p>Refreshing yogurt-based mango drink.</p>
+                    <p class="price">Price: ₹100</p>
+                    <select class="customization" data-base-price="100">
+                        <option value="regular" data-price="100">Regular</option>
+                        <option value="extra_sweet" data-price="110">Extra Sweet (+₹10)</option>
+                        <option value="no_sugar" data-price="90">No Sugar (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Mango Lassi" data-price="100">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://natashaskitchen.com/wp-content/uploads/2021/07/Iced-Tea-3-1-1024x1536.jpg" alt="Iced Tea">
+                    <h3>Iced Tea</h3>
+                    <p>Chilled tea with lemon and mint.</p>
+                    <p class="price">Price: ₹80</p>
+                    <select class="customization" data-base-price="80">
+                        <option value="regular" data-price="80">Regular</option>
+                        <option value="extra_lemon" data-price="90">Extra Lemon (+₹10)</option>
+                        <option value="no_mint" data-price="70">No Mint (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Iced Tea" data-price="80">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category" data-category="non-vegetarian">
+            <h3>Non-Vegetarian Favorites</h3>
+            <div class="menu-items">
+                <div class="item" data-type="nonveg" data-category="non-vegetarian">
+                    <img src="https://www.duemler.com/recipes/images/yogurt-chicken.png" alt="Chicken Tikka">
+                    <h3>Chicken Tikka</h3>
+                    <p>Spicy grilled chicken marinated in yogurt.</p>
+                    <p class="price">Price: ₹260</p>
+                    <select class="customization" data-base-price="260">
+                        <option value="regular" data-price="260">Regular</option>
+                        <option value="extra_spicy" data-price="280">Extra Spicy (+₹20)</option>
+                        <option value="boneless" data-price="290">Boneless (+₹30)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Chicken Tikka" data-price="260">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="non-vegetarian">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.5ajOgfB32bT0ikHVrUkhNAHaE7?r=0&w=626&h=417&rs=1&pid=ImgDetMain" alt="Butter Chicken">
+                    <h3>Butter Chicken</h3>
+                    <p>Rich tomato-based curry with tender chicken.</p>
+                    <p class="price">Price: ₹300</p>
+                    <select class="customization" data-base-price="300">
+                        <option value="regular" data-price="300">Regular</option>
+                        <option value="extra_butter" data-price="320">Extra Butter (+₹20)</option>
+                        <option value="mild" data-price="280">Mild (-₹20)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Butter Chicken" data-price="300">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="non-vegetarian">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.OMOdHBR9scT0CudbqTXQPwHaFj?r=0&w=600&h=450&rs=1&pid=ImgDetMain" alt="Grilled Salmon">
+                    <h3>Grilled Salmon</h3>
+                    <p>Fresh salmon fillet with lemon herb sauce.</p>
+                    <p class="price">Price: ₹450</p>
+                    <select class="customization" data-base-price="450">
+                        <option value="regular" data-price="450">Regular</option>
+                        <option value="extra_sauce" data-price="470">Extra Sauce (+₹20)</option>
+                        <option value="no_herbs" data-price="430">No Herbs (-₹20)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Grilled Salmon" data-price="450">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="non-vegetarian">
+                    <img src="https://www.licious.in/blog/wp-content/uploads/2020/12/Turkish-Kebabs-min-768x768.jpg" alt="Lamb Kebab">
+                    <h3>Lamb Kebab</h3>
+                    <p>Juicy lamb skewers with mint yogurt dip.</p>
+                    <p class="price">Price: ₹350</p>
+                    <select class="customization" data-base-price="350">
+                        <option value="regular" data-price="350">Regular</option>
+                        <option value="extra_spicy" data-price="360">Extra Spicy (+₹10)</option>
+                        <option value="no_dip" data-price="340">No Dip (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Lamb Kebab" data-price="350">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="non-vegetarian">
+                    <img src="https://img.freepik.com/premium-photo/barbeque-chicken-wings_906149-17991.jpg" alt="Chicken Wings">
+                    <h3>Chicken Wings</h3>
+                    <p>Spicy buffalo wings with blue cheese dip.</p>
+                    <p class="price">Price: ₹200</p>
+                    <select class="customization" data-base-price="200">
+                        <option value="regular" data-price="200">Regular</option>
+                        <option value="extra_spicy" data-price="210">Extra Spicy (+₹10)</option>
+                        <option value="no_dip" data-price="190">No Dip (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Chicken Wings" data-price="200">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="non-vegetarian">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.PYzsAlkjgvhaR3frfMaWiQHaI-?r=0&w=660&h=800&rs=1&pid=ImgDetMain" alt="Prawn Curry">
+                    <h3>Prawn Curry</h3>
+                    <p>Spicy coconut-based curry with fresh prawns.</p>
+                    <p class="price">Price: ₹400</p>
+                    <select class="customization" data-base-price="400">
+                        <option value="regular" data-price="400">Regular</option>
+                        <option value="extra_prawns" data-price="420">Extra Prawns (+₹20)</option>
+                        <option value="mild" data-price="380">Mild (-₹20)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Prawn Curry" data-price="400">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="non-vegetarian">
+                    <img src="https://bollywoodtandoor.com.au/wp-content/uploads/2022/04/Chicken-Tikka.png" alt="Fish Tikka">
+                    <h3>Fish Tikka</h3>
+                    <p>Grilled fish marinated in spices.</p>
+                    <p class="price">Price: ₹320</p>
+                    <select class="customization" data-base-price="320">
+                        <option value="regular" data-price="320">Regular</option>
+                        <option value="extra_spicy" data-price="330">Extra Spicy (+₹10)</option>
+                        <option value="no_spice" data-price="310">No Spice (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Fish Tikka" data-price="320">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="non-vegetarian">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.IOg-1XWYlxx6BgxdCnVgqAHaE7?r=0&w=626&h=417&rs=1&pid=ImgDetMain" alt="Chicken Curry">
+                    <h3>Chicken Curry</h3>
+                    <p>Traditional spicy chicken curry.</p>
+                    <p class="price">Price: ₹280</p>
+                    <select class="customization" data-base-price="280">
+                        <option value="regular" data-price="280">Regular</option>
+                        <option value="extra_gravy" data-price="290">Extra Gravy (+₹10)</option>
+                        <option value="mild" data-price="270">Mild (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Chicken Curry" data-price="280">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="non-vegetarian">
+                    <img src="https://th.bing.com/th/id/OIP.HZcBCLpBtPzyEEKqXfd0dAHaE7?w=260&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Mutton Rogan Josh">
+                    <h3>Mutton Rogan Josh</h3>
+                    <p>Rich mutton curry with Kashmiri spices.</p>
+                    <p class="price">Price: ₹380</p>
+                    <select class="customization" data-base-price="380">
+                        <option value="regular" data-price="380">Regular</option>
+                        <option value="extra_spicy" data-price="390">Extra Spicy (+₹10)</option>
+                        <option value="no_fat" data-price="370">No Fat (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Mutton Rogan Josh" data-price="380">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="non-vegetarian">
+                    <img src="https://th.bing.com/th/id/OIP.rQp9D30qAlZqQxtd8eSoZwHaHa?w=187&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Chicken Burger">
+                    <h3>Chicken Burger</h3>
+                    <p>Juicy chicken patty with lettuce and sauce.</p>
+                    <p class="price">Price: ₹200</p>
+                    <select class="customization" data-base-price="200">
+                        <option value="regular" data-price="200">Regular</option>
+                        <option value="extra_cheese" data-price="220">Extra Cheese (+₹20)</option>
+                        <option value="no_sauce" data-price="190">No Sauce (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Chicken Burger" data-price="200">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="beverage">
+                    <img src="https://thumbs.dreamstime.com/b/london-uk-august-glass-bottle-original-coca-cola-soft-drink-wooden-background-most-popular-wood-world-213071401.jpg" alt="Cola">
+                    <h3>Cola</h3>
+                    <p>Chilled carbonated soft drink.</p>
+                    <p class="price">Price: ₹60</p>
+                    <select class="customization" data-base-price="60">
+                        <option value="regular" data-price="60">Regular</option>
+                        <option value="diet" data-price="65">Diet (+₹5)</option>
+                        <option value="no_ice" data-price="55">No Ice (-₹5)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Cola" data-price="60">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="beverage">
+                    <img src="https://th.bing.com/th/id/OIP.su3UJCszBBJzLR574vkaJQAAAA?w=208&h=305&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Lemonade">
+                    <h3>Lemonade</h3>
+                    <p>Freshly squeezed lemon drink.</p>
+                    <p class="price">Price: ₹90</p>
+                    <select class="customization" data-base-price="90">
+                        <option value="regular" data-price="90">Regular</option>
+                        <option value="extra_sweet" data-price="100">Extra Sweet (+₹10)</option>
+                        <option value="no_sugar" data-price="80">No Sugar (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Lemonade" data-price="90">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category" data-category="pizza">
+            <h3>Pizzas</h3>
+            <div class="menu-items">
+                <div class="item" data-type="veg" data-category="pizza">
+                    <img src="https://th.bing.com/th/id/OIP.OJwx7HyBOxMTQuOOpMkltAHaJQ?w=208&h=260&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Margherita Pizza">
+                    <h3>Margherita Pizza</h3>
+                    <p>Classic pizza with tomato, mozzarella, and basil.</p>
+                    <p class="price">Price: ₹250</p>
+                    <select class="customization" data-base-price="250">
+                        <option value="regular" data-price="250">Regular</option>
+                        <option value="extra_cheese" data-price="270">Extra Cheese (+₹20)</option>
+                        <option value="thin_crust" data-price="260">Thin Crust (+₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Margherita Pizza" data-price="250">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="pizza">
+                    <img src="https://th.bing.com/th/id/OIP.KVv-GcRjAhbESp5xdfz2eAHaHa?w=162&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Veggie Supreme Pizza">
+                    <h3>Veggie Supreme Pizza</h3>
+                    <p>Pizza with mixed vegetables and cheese.</p>
+                    <p class="price">Price: ₹280</p>
+                    <select class="customization" data-base-price="280">
+                        <option value="regular" data-price="280">Regular</option>
+                        <option value="extra_veggies" data-price="300">Extra Veggies (+₹20)</option>
+                        <option value="no_olives" data-price="270">No Olives (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Veggie Supreme Pizza" data-price="280">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="pizza">
+                    <img src="https://th.bing.com/th/id/OIP.nHJtEk06OuyeARm6DimOzgHaE8?w=259&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Pepperoni Pizza">
+                    <h3>Pepperoni Pizza</h3>
+                    <p>Pizza with pepperoni and mozzarella.</p>
+                    <p class="price">Price: ₹300</p>
+                    <select class="customization" data-base-price="300">
+                        <option value="regular" data-price="300">Regular</option>
+                        <option value="extra_pepperoni" data-price="320">Extra Pepperoni (+₹20)</option>
+                        <option value="thin_crust" data-price="310">Thin Crust (+₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Pepperoni Pizza" data-price="300">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="pizza">
+                    <img src="https://th.bing.com/th/id/OIP.6h71PA9kjrVwro6q9XrMvwHaLH?w=204&h=306&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Chicken BBQ Pizza">
+                    <h3>Chicken BBQ Pizza</h3>
+                    <p>Pizza with BBQ chicken and onions.</p>
+                    <p class="price">Price: ₹320</p>
+                    <select class="customization" data-base-price="320">
+                        <option value="regular" data-price="320">Regular</option>
+                        <option value="extra_chicken" data-price="340">Extra Chicken (+₹20)</option>
+                        <option value="no_onions" data-price="310">No Onions (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Chicken BBQ Pizza" data-price="320">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="pizza">
+                    <img src="https://th.bing.com/th/id/OIP.3Jed3ONWk3MyTTQrpmOcxAHaFh?w=239&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Mushroom Pizza">
+                    <h3>Mushroom Pizza</h3>
+                    <p>Pizza with mushrooms and truffle oil.</p>
+                    <p class="price">Price: ₹290</p>
+                    <select class="customization" data-base-price="290">
+                        <option value="regular" data-price="290">Regular</option>
+                        <option value="extra_mushrooms" data-price="310">Extra Mushrooms (+₹20)</option>
+                        <option value="no_truffle" data-price="280">No Truffle Oil (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Mushroom Pizza" data-price="290">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="pizza">
+                    <img src="https://th.bing.com/th/id/OIP.hsDHa7m1HNi2bh5pSta3SwHaFW?w=223&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Four Cheese Pizza">
+                    <h3>Four Cheese Pizza</h3>
+                    <p>Pizza with four types of cheese.</p>
+                    <p class="price">Price: ₹310</p>
+                    <select class="customization" data-base-price="310">
+                        <option value="regular" data-price="310">Regular</option>
+                        <option value="extra_cheese" data-price="330">Extra Cheese (+₹20)</option>
+                        <option value="thin_crust" data-price="320">Thin Crust (+₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Four Cheese Pizza" data-price="310">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="pizza">
+                    <img src="https://th.bing.com/th/id/OIP.-ei61GJRJmYE-mq_CVTV2QHaHa?w=174&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Meat Lover's Pizza">
+                    <h3>Meat Lover's Pizza</h3>
+                    <p>Pizza with assorted meats and cheese.</p>
+                    <p class="price">Price: ₹350</p>
+                    <select class="customization" data-base-price="350">
+                        <option value="regular" data-price="350">Regular</option>
+                        <option value="extra_meat" data-price="370">Extra Meat (+₹20)</option>
+                        <option value="no_sausage" data-price="340">No Sausage (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Meat Lover's Pizza" data-price="350">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="pizza">
+                    <img src="https://th.bing.com/th/id/OIP.nfcR8mGGR4K1lQBn7YKeUgHaLH?w=204&h=306&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Pesto Pizza">
+                    <h3>Pesto Pizza</h3>
+                    <p>Pizza with pesto sauce and vegetables.</p>
+                    <p class="price">Price: ₹270</p>
+                    <select class="customization" data-base-price="270">
+                        <option value="regular" data-price="270">Regular</option>
+                        <option value="extra_pesto" data-price="290">Extra Pesto (+₹20)</option>
+                        <option value="no_veggies" data-price="260">No Veggies (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Pesto Pizza" data-price="270">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="pizza">
+                    <img src="https://th.bing.com/th/id/OIP.JeWIM4jJkLwep-Bzk6FfhAHaE8?w=300&h=200&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Tandoori Chicken Pizza">
+                    <h3>Tandoori Chicken Pizza</h3>
+                    <p>Pizza with tandoori chicken and spices.</p>
+                    <p class="price">Price: ₹330</p>
+                    <select class="customization" data-base-price="330">
+                        <option value="regular" data-price="330">Regular</option>
+                        <option value="extra_chicken" data-price="350">Extra Chicken (+₹20)</option>
+                        <option value="mild" data-price="320">Mild (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Tandoori Chicken Pizza" data-price="330">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="pizza">
+                    <img src="https://th.bing.com/th/id/OIP.vEtwHmDcq_iAxr0vqWZ-3gHaE8?w=276&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Spinach Ricotta Pizza">
+                    <h3>Spinach Ricotta Pizza</h3>
+                    <p>Pizza with spinach and ricotta cheese.</p>
+                    <p class="price">Price: ₹290</p>
+                    <select class="customization" data-base-price="290">
+                        <option value="regular" data-price="290">Regular</option>
+                        <option value="extra_spinach" data-price="310">Extra Spinach (+₹20)</option>
+                        <option value="no_ricotta" data-price="280">No Ricotta (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Spinach Ricotta Pizza" data-price="290">Add to Cart</button>
+                </div>
+                <div class="item" data-type="nonveg" data-category="pizza">
+                    <img src="https://th.bing.com/th/id/OIP.yUqODSf884v9h9VGOhZ5kgHaFj?w=236&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Sausage Pizza">
+                    <h3>Sausage Pizza</h3>
+                    <p>Pizza with sausage and bell peppers.</p>
+                    <p class="price">Price: ₹310</p>
+                    <select class="customization" data-base-price="310">
+                        <option value="regular" data-price="310">Regular</option>
+                        <option value="extra_sausage" data-price="330">Extra Sausage (+₹20)</option>
+                        <option value="no_peppers" data-price="300">No Peppers (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Sausage Pizza" data-price="310">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category" data-category="beverage">
+            <h3>Beverages</h3>
+            <div class="menu-items">
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://th.bing.com/th/id/OIP.g125UANlE2o8P_S8w4cN6AHaHa?w=208&h=208&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Mango Lassi">
+                    <h3>Mango Lassi</h3>
+                    <p>Refreshing yogurt-based mango drink.</p>
+                    <p class="price">Price: ₹100</p>
+                    <select class="customization" data-base-price="100">
+                        <option value="regular" data-price="100">Regular</option>
+                        <option value="extra_sweet" data-price="110">Extra Sweet (+₹10)</option>
+                        <option value="no_sugar" data-price="90">No Sugar (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Mango Lassi" data-price="100">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://th.bing.com/th/id/OIP.RejP1tWQAuWgyP3oGxk-cQHaLH?w=208&h=305&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Iced Tea">
+                    <h3>Iced Tea</h3>
+                    <p>Chilled tea with lemon and mint.</p>
+                    <p class="price">Price: ₹80</p>
+                    <select class="customization" data-base-price="80">
+                        <option value="regular" data-price="80">Regular</option>
+                        <option value="extra_lemon" data-price="90">Extra Lemon (+₹10)</option>
+                        <option value="no_mint" data-price="70">No Mint (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Iced Tea" data-price="80">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://th.bing.com/th?q=Cola+in+a+Glass&w=120&h=120&c=1&rs=1&qlt=90&r=0&cb=1&dpr=1.3&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247" alt="Cola">
+                    <h3>Cola</h3>
+                    <p>Chilled carbonated soft drink.</p>
+                    <p class="price">Price: ₹60</p>
+                    <select class="customization" data-base-price="60">
+                        <option value="regular" data-price="60">Regular</option>
+                        <option value="diet" data-price="65">Diet (+₹5)</option>
+                        <option value="no_ice" data-price="55">No Ice (-₹5)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Cola" data-price="60">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://th.bing.com/th/id/OIP.k5zh_dLcRR26rew52dcUmQHaJ4?w=208&h=277&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Lemonade">
+                    <h3>Lemonade</h3>
+                    <p>Freshly squeezed lemon drink.</p>
+                    <p class="price">Price: ₹90</p>
+                    <select class="customization" data-base-price="90">
+                        <option value="regular" data-price="90">Regular</option>
+                        <option value="extra_sweet" data-price="100">Extra Sweet (+₹10)</option>
+                        <option value="no_sugar" data-price="80">No Sugar (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Lemonade" data-price="90">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://th.bing.com/th/id/OIP.Cn1zad0znilCIOXp-KCS3AHaHa?w=177&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Orange Juice">
+                    <h3>Orange Juice</h3>
+                    <p>Freshly squeezed orange juice.</p>
+                    <p class="price">Price: ₹110</p>
+                    <select class="customization" data-base-price="110">
+                        <option value="regular" data-price="110">Regular</option>
+                        <option value="pulp_free" data-price="115">Pulp-Free (+₹5)</option>
+                        <option value="no_ice" data-price="100">No Ice (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Orange Juice" data-price="110">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://th.bing.com/th/id/OIP.s7fMOxUFDbHc4MaJ04p6JwHaE8?w=285&h=190&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Green Tea">
+                    <h3>Green Tea</h3>
+                    <p>Refreshing green tea with honey.</p>
+                    <p class="price">Price: ₹85</p>
+                    <select class="customization" data-base-price="85">
+                        <option value="regular" data-price="85">Regular</option>
+                        <option value="extra_honey" data-price="95">Extra Honey (+₹10)</option>
+                        <option value="no_honey" data-price="75">No Honey (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Green Tea" data-price="85">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://th.bing.com/th/id/OIP.7igJCLa_q7NrIzHKm8dLugHaFj?w=242&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Coffee">
+                    <h3>Coffee</h3>
+                    <p>Hot brewed coffee with milk.</p>
+                    <p class="price">Price: ₹120</p>
+                    <select class="customization" data-base-price="120">
+                        <option value="regular" data-price="120">Regular</option>
+                        <option value="decaf" data-price="125">Decaf (+₹5)</option>
+                        <option value="no_milk" data-price="110">No Milk (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Coffee" data-price="120">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://th.bing.com/th/id/OIP.-rFSSecthE8flUNcIY7NuQHaLH?w=204&h=306&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Strawberry Smoothie">
+                    <h3>Strawberry Smoothie</h3>
+                    <p>Blended strawberries with yogurt.</p>
+                    <p class="price">Price: ₹130</p>
+                    <select class="customization" data-base-price="130">
+                        <option value="regular" data-price="130">Regular</option>
+                        <option value="extra_fruit" data-price="140">Extra Fruit (+₹10)</option>
+                        <option value="no_yogurt" data-price="120">No Yogurt (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Strawberry Smoothie" data-price="130">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://th.bing.com/th/id/OIP.0IQcEZjC0KxfEyD-MqqPTQHaLH?w=120&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Hot Chocolate">
+                    <h3>Hot Chocolate</h3>
+                    <p>Rich hot chocolate with whipped cream.</p>
+                    <p class="price">Price: ₹140</p>
+                    <select class="customization" data-base-price="140">
+                        <option value="regular" data-price="140">Regular</option>
+                        <option value="extra_cream" data-price="150">Extra Cream (+₹10)</option>
+                        <option value="no_cream" data-price="130">No Cream (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Hot Chocolate" data-price="140">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://th.bing.com/th/id/OIP.PVSoXiUsgWUmc0V6i8ex3wHaLH?w=208&h=305&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Chai Latte">
+                    <h3>Chai Latte</h3>
+                    <p>Spiced tea with steamed milk.</p>
+                    <p class="price">Price: ₹110</p>
+                    <select class="customization" data-base-price="110">
+                        <option value="regular" data-price="110">Regular</option>
+                        <option value="extra_spice" data-price="120">Extra Spice (+₹10)</option>
+                        <option value="no_milk" data-price="100">No Milk (-₹10)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Chai Latte" data-price="110">Add to Cart</button>
+                </div>
+                <div class="item" data-type="veg" data-category="beverage">
+                    <img src="https://th.bing.com/th/id/OIP.29krwx1lBKPyhxx4Z_fBwgHaEK?w=314&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Coconut Water">
+                    <h3>Coconut Water</h3>
+                    <p>Fresh coconut water, chilled.</p>
+                    <p class="price">Price: ₹70</p>
+                    <select class="customization" data-base-price="70">
+                        <option value="regular" data-price="70">Regular</option>
+                        <option value="with_pulp" data-price="75">With Pulp (+₹5)</option>
+                        <option value="no_ice" data-price="65">No Ice (-₹5)</option>
+                    </select>
+                    <button class="add-to-cart" data-name="Coconut Water" data-price="70">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cartItems"></ul>
+        <p>Total: ₹<span id="cartTotal">0</span></p>
+        <p>Estimated Preparation Time: <span id="prepTime">0</span> mins</p>
+        <button id="confirmOrder">Confirm Order</button>
+    </section>
+
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <h2>Order Confirmed!</h2>
+            <p>Thank you <span id="modalUsername"></span>. Your food will be ready in <span id="modalPrepTime"></span> minutes.</p>
+            <button id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <section class="history">
+        <h3>Order History</h3>
+        <ul id="orderHistory"></ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Food Court. All rights reserved.</p>
+        <p><a href="#">About Us</a> | Contact: <a href="mailto:info@foodcourt.com">info@foodcourt.com</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
